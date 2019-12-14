@@ -1,0 +1,18 @@
+<!--anime_edit.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="nav_container">
+    <button class='header_btn' onclick="location.href='/animes/{{anime._id}}';">Back</button>
+    <div id="logo" onclick="location.href='/';">Anime section</div>
+</div>
+
+<div class='anime_form'>
+    <form method='POST' action='/animes/{{anime._id}}'>
+        <input type='hidden' name='_method' value='PUT'/>
+        {% include 'partials/animes_form.html' %}
+
+        <button type='submit' class='anime_btn' style="margin-left: 0px;">Update Anime Drawings Listing</button>
+    </form>
+</div>
+{% endblock %}
